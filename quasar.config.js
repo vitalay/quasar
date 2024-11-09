@@ -7,30 +7,30 @@
 
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
-module.exports = function (ctx) {
+
+
+module.exports = function(ctx) {
   return {
-    // ... остальные настройки
+    // ... Остальные конфигурации
 
-    // Настройки деплоя
+    build: {
+      distDir: 'dist/spa'
+    },
+
+    // Конфигурация деплоя
     deployConfig: {
-      ghPages: {
-        branch: "gh-pages",
-        dir: "dist/spa",
-      },
-    },
-
-    // Остальные настройки
-    framework: {
-      config: {},
-    },
-    // ...
+      githubPages: {
+        remoteDir: '/docs',
+        alias: 'github-pages'
+      }
+    }
   };
 };
 
-const { configure } = require("quasar/wrappers");
+// const { configure } = require("quasar/wrappers");
 
-module.exports = configure(function (/* ctx */) {
-  return {
+// module.exports = configure(function (/* ctx */) {
+//   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
 
